@@ -19,7 +19,7 @@ export const CryptoHistory = ({ items }) => {
             <Td>{id}</Td>
             <Td>{price}</Td>
             <Td>{amount}</Td>
-            <Td>{format(new Date(date), "yyyy-MM-dd 'Time:'HH:mm:ss.xxx")}</Td>
+            <Td>{format(new Date(date), "yyyy-MM-dd 'Time: 'HH:mm:ss.xxx")}</Td>
           </Tr>
         ))}
       </tbody>
