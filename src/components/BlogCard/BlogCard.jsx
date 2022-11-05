@@ -1,6 +1,8 @@
 import { Card, CardHeader, CardPoster, CardBody, Tag, CardTitle, CardText, CardFooter, UserBox, Avatar, UserInfo, UserName, Date } from './BlogCard.styled';
+import { FormatDate } from '../utils/FormatDate';
 
 export const BlogCard = ({poster, tag, title, description, userName, avatar, postedAt}) => {
+  const formatedDate = FormatDate(postedAt);
   return <div>BlogCard
     <Card>
   <CardHeader>
@@ -21,7 +23,7 @@ export const BlogCard = ({poster, tag, title, description, userName, avatar, pos
       <Avatar src={avatar} alt={userName} />
       <UserInfo>
         <UserName>{userName}</UserName>
-            <Date>{postedAt}</Date>
+            <Date>{formatedDate}</Date>
       </UserInfo>
     </UserBox>
   </CardFooter>
