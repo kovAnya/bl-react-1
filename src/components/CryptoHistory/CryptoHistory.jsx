@@ -1,24 +1,26 @@
-import { BaseTable, THead, Th, Tr, Td } from './CryptoHistory.styled';
+import { BaseTable, THead, Th } from './CryptoHistory.styled';
+import CryptoHistoryItems from './CryptoHistoryItems';
 
-export const CryptoHistory = ({items}) => {
-  return <BaseTable>
-  <THead>
-    <tr>
-      <Th>№</Th>
-      <Th>PRICE</Th>
-      <Th>AMOUNT</Th>
-      <Th>DATE</Th>
-    </tr>
-  </THead>
 
-  <tbody>
-    {items.map(({id, price, amount, date})=>    <Tr>
-      <Td>{id}</Td>
-      <Td>{price}</Td>
-      <Td>{amount}</Td>
-      <Td>{date}</Td>
-    </Tr>)}
+export const CryptoHistory = ({ items }) => {
   
-  </tbody>
-</BaseTable>
+  return <BaseTable>
+    <THead>
+      <tr>
+        <Th>№</Th>
+        <Th>PRICE</Th>
+        <Th>AMOUNT</Th>
+        <Th>DATE</Th>
+      </tr>
+    </THead>
+    {items.map(({ id, price, amount, date }) => (
+      <CryptoHistoryItems
+        key={id}
+        price={price}
+        amount={amount}
+        date={date}
+      />
+    ))}
+  
+  </BaseTable>
 };
